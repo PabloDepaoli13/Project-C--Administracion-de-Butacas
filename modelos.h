@@ -36,7 +36,7 @@ public:
 
     void mostrarButacasDisponibles();
 
-
+    int mostrarButacasOcupadas();
 
 };
 

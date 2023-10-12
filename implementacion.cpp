@@ -1,9 +1,13 @@
 #include "modelos.h"
 
 
+
 using namespace std;
 
-string espacio(5, ' ');
+
+    string espacio(5, ' ');
+    //int screenWidth = getTerminalWidth();
+
 
     bool Cine::consultarButaca(int numero) {
         for (const Butaca& butaca : butacas) {
@@ -33,7 +37,7 @@ string espacio(5, ' ');
                     cout << endl << espacio <<"Ingrese su nombre: "; cin >> butaca.nombre;
                     cout << espacio <<"Ingrese su apellido: "; cin >> butaca.apellido; cout << endl;
                     butaca.reservada = true;
-                    cout << endl <<espacio <<"Butaca reservada con exito." << endl;
+                    cout << endl <<espacio <<"\033[1;32mButaca reservada con exito.\033[0m" << endl;
                     return true;
                 } else {
                     cout << espacio <<"La butaca ya esta reservada." << endl;
@@ -66,7 +70,7 @@ string espacio(5, ' ');
 
     bool Cine::actualizarButaca(int num) {
         for (Butaca& butaca : butacas) {
-            if (butaca.numero == num) {
+            if (butaca.numero == num && butaca.reservada == true) {
                 cout << espacio <<"Datos Anteriores" << endl;
                 cout << espacio <<"---------------------" << endl;
                 cout << espacio <<"Nombre: " << butaca.nombre << endl;
@@ -99,11 +103,23 @@ string espacio(5, ' ');
     }*/
 
     void Cine::mostrarButacasDisponibles(){
+    string barraC(11, '-');
+    cout << endl << endl << espacio <<"Butacas disponibles: " << "\033[1;32m Color Verde \033[0m" << endl;
+    cout << espacio <<"Butacas reservadas: " << "\033[1;31m Color Rojo \033[0m"<< endl << endl;
+
+    cout << espacio << barraC << "\033[1;33m[----PANTALLA----]\033[0m" << barraC << endl << endl << endl;
+    cout << espacio;
     for (const Butaca& butaca : butacas) {
         if (!butaca.reservada) {
+            if(butaca.numero == 14 || butaca.numero == 18){
+                cout << endl << espacio ;
+            }
             cout << "\033[1;32m [- \033[0m" << butaca.numero <<"\033[1;32m -] \033[0m";
             }
         else {
+            if(butaca.numero == 14 || butaca.numero == 18){
+                cout << endl << espacio;
+            }
             cout << "\033[1;31m [- \033[0m" << butaca.numero <<"\033[1;31m -] \033[0m";
             }
         }
@@ -121,3 +137,19 @@ string espacio(5, ' ');
     }
 
 
+    int Cine::mostrarButacasOcupadas(){
+    int cantButacas = 1;
+    cout << espacio <<"Butacas reservadas: "<< endl << endl;
+    cout << espacio;
+    for (const Butaca& butaca : butacas) {
+        if (butaca.reservada) {
+            if(cantButacas == 5 || cantButacas == 9){
+                cout << endl << espacio;
+            }
+            cout << "\033[1;32m [- \033[0m" << butaca.numero <<"\033[1;32m -] \033[0m";
+            cantButacas++;
+            }
+
+        }
+        return cantButacas;
+    }

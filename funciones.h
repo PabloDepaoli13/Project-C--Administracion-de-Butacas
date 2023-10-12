@@ -11,7 +11,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <cctype>
-#include <windows.h>
+
 
     //Manejo de colores
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -71,7 +71,7 @@ void centerText(const string& text) {
 
         }
 
-        this_thread::sleep_for(chrono::seconds(1));
+        this_thread::sleep_for(chrono::milliseconds(400));
 
         tiempoTranscurrido++;
     }
@@ -110,7 +110,7 @@ void dibujarMenuPricipal(){
 
 
     cout  << space << "Que funcion desea realizar:" << endl;
-        cout << space <<"1. Consultar butaca" << endl;
+        cout << space <<"1. Consultar informacion de una butaca" << endl;
         cout << space <<"2. Reservar butaca" << endl;
         cout << space <<"3. Liberar butaca" << endl;
         cout << space <<"4. Actualizar butaca" << endl;

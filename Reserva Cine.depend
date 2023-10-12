@@ -33,20 +33,20 @@
 	<cstdlib>
 	<windows.h>
 
-1697073410 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
+1697083942 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
 	"modelos.h"
 
-1697073545 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
+1697083955 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
 	<iostream>
 	<vector>
 	<fstream>
 	<string>
 
-1697079055 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
+1697084260 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
 	"modelos.h"
 	"funciones.h"
 
-1697078042 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
+1697083341 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
 	"modelos.h"
 	<iostream>
 	<vector>
@@ -58,5 +58,4 @@
 	<windows.h>
 	<conio.h>
 	<cctype>
-	<windows.h>
 

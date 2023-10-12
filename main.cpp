@@ -19,16 +19,18 @@ int main()
 
 
     // Agregar butacas al teatro
-    cineNew.butacas.push_back(Butaca(1, 25.0));
-    cineNew.butacas.push_back(Butaca(2, 30.0));
-    cineNew.butacas.push_back(Butaca(3, 35.0));
-    cineNew.butacas.push_back(Butaca(4, 45.0));
-    cineNew.butacas.push_back(Butaca(5, 45.0));
-    cineNew.butacas.push_back(Butaca(6, 45.0));
-    cineNew.butacas.push_back(Butaca(8, 45.0));
-    cineNew.butacas.push_back(Butaca(9, 45.0));
-    cineNew.butacas.push_back(Butaca(10, 45.0));
-
+    cineNew.butacas.push_back(Butaca(10, 25.0));
+    cineNew.butacas.push_back(Butaca(11, 30.0));
+    cineNew.butacas.push_back(Butaca(12, 35.0));
+    cineNew.butacas.push_back(Butaca(13, 45.0));
+    cineNew.butacas.push_back(Butaca(14, 45.0));
+    cineNew.butacas.push_back(Butaca(15, 80.0));
+    cineNew.butacas.push_back(Butaca(16, 80.0));
+    cineNew.butacas.push_back(Butaca(17, 45.0));
+    cineNew.butacas.push_back(Butaca(18, 45.0));
+    cineNew.butacas.push_back(Butaca(19, 45.0));
+    cineNew.butacas.push_back(Butaca(20, 45.0));
+    cineNew.butacas.push_back(Butaca(21, 45.0));
     // Implementar un bucle para interactuar con el sistema
     while (true) {
         string space(5, ' ');
@@ -46,35 +48,53 @@ int main()
         int numeroButaca;
         switch (valorNuevo) {
             case 1:
-                cout << endl <<  endl << space << "Numero de butaca a consultar: ";
+                cineNew.mostrarButacasDisponibles();
+
+                cout << endl <<  endl << space << "\033[1;33mNumero de butaca a consultar: \033[0m";
                 cin >> numeroButaca;
                 cout << endl;
+
                 cineNew.consultarButaca(numeroButaca);
                 presioneParaContinuar();
                 break;
             case 2:
-                cout << endl << endl << space <<"Numero de butaca a reservar: ";
+                cineNew.mostrarButacasDisponibles();
+
+                cout << endl << endl << space <<"\033[1;33mNumero de butaca a reservar: \033[0m";
                 cin >> numeroButaca;
                 cout << endl;
+
                 cineNew.reservarButaca(numeroButaca);
                 presioneParaContinuar();
                 break;
             case 3:
-                cout << endl << endl << space <<"Numero de butaca a liberar: ";
+                cineNew.mostrarButacasDisponibles();
+
+                cout << endl << endl << space <<"\033[1;33mNumero de butaca a liberar: \033[0m";
                 cin >> numeroButaca;
+
                 cineNew.liberarButaca(numeroButaca);
                 presioneParaContinuar();
                 break;
             case 4:
-                cout << endl << endl << space <<"Numero de butaca a actualizar: ";
-                cin >> numeroButaca;
-                cout << endl;
-                cineNew.actualizarButaca(numeroButaca);
+                int cantButacasOcup;
+                cantButacasOcup = cineNew.mostrarButacasOcupadas();
+                if(cantButacasOcup == 1){
+                    cout << endl << endl << space <<"\033[1;31m No existen butacas reservadas para actualizar. \033[0m";
+                }else{
+                    cout << endl << endl << space <<"\033[1;33mNumero de butaca a actualizar: \033[0m";
+                    cin >> numeroButaca;
+                    cout << endl;
+
+                    cineNew.actualizarButaca(numeroButaca);
+                }
+
                 presioneParaContinuar();
                 break;
 
             case 5:
                 cout << endl << endl << space << "Resultado: " << endl << endl << endl;
+
                 cineNew.mostrarButacasDisponibles();
                 presioneParaContinuar();
                 break;
