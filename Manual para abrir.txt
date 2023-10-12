@@ -1,0 +1,7 @@
+Este proyecto fue creado con Code Blocks C++. 
+Para abrirlo correctamente es recomendable tener el mismo programa.
+
+0-Una vez instalado Code Block con su compilador de consola.
+1-Elegir la opcion de abrir un nuevo proyecto.
+2-Venir a la carpeta de destino y abrir Reserva Cine.cbp
+3-Apretar el boton de compilar y ejecutar.
