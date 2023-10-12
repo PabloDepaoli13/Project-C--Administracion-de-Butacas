@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1697054131 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\reserva cine\implementacion.cpp
+	"modelos.h"
+	<iostream>
+	<vector>
+	<fstream>
+
+1696999957 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\reserva cine\modelos.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+
+1697054452 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\reserva cine\main.cpp
+	"modelos.h"
+	"funciones.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<iomanip>
+	<thread>
+	<chrono>
+	<cstdlib>
+
+1697053972 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\reserva cine\funciones.h
+	"modelos.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<iomanip>
+	<thread>
+	<chrono>
+	<cstdlib>
+	<windows.h>
+
