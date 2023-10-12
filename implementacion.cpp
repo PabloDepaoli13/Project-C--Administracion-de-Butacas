@@ -1,7 +1,5 @@
 #include "modelos.h"
-#include <iostream>
-#include <vector>
-#include <fstream>
+
 
 using namespace std;
 
@@ -87,7 +85,7 @@ string espacio(5, ' ');
         return false;
     }
 
-    void Cine::mostrarButacasDisponibles(){
+    /*void Cine::mostrarButacasDisponibles(){
             cout << espacio <<"Butacas disponibles:" << endl;
             cout << espacio <<"---------------------" << endl;
     for (const Butaca& butaca : butacas) {
@@ -98,6 +96,28 @@ string espacio(5, ' ');
             cout << espacio <<"---------------------" << endl;
             }
         }
+    }*/
+
+    void Cine::mostrarButacasDisponibles(){
+    for (const Butaca& butaca : butacas) {
+        if (!butaca.reservada) {
+            cout << "\033[1;32m [- \033[0m" << butaca.numero <<"\033[1;32m -] \033[0m";
+            }
+        else {
+            cout << "\033[1;31m [- \033[0m" << butaca.numero <<"\033[1;31m -] \033[0m";
+            }
+        }
+
+       /* cout << espacio <<"Butacas disponibles:" << endl;
+            cout << espacio <<"---------------------" << endl;
+    for (const Butaca& butaca : butacas) {
+        if (!butaca.reservada) {
+            cout << espacio <<"Numero de butaca: " << butaca.numero << endl;
+            cout << espacio <<"Precio: " << butaca.precio << endl;
+            cout << espacio <<"Estado: Disponible" << endl;
+            cout << espacio <<"---------------------" << endl;
+            }
+        }*/
     }
 
 

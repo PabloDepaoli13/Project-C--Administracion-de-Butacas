@@ -9,8 +9,13 @@
 #include <chrono>
 #include <cstdlib>
 #include <windows.h>
+#include <conio.h>
+#include <cctype>
+#include <windows.h>
 
-
+    //Manejo de colores
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    int tiempoTranscurrido = 0;
 
 
 
@@ -23,7 +28,7 @@ int getTerminalWidth() {
 
 
 void centerText(const string& text) {
-    string continuarText = "Precione enter para continuar...";
+    string continuarText = "Precione enter para continuar";
     int screenWidth = getTerminalWidth();
     int textWidth = text.length();
     int nextWidth = continuarText.length();
@@ -37,19 +42,42 @@ void centerText(const string& text) {
         string spaces3(padding2, ' ');
 
 
-
-        cout << spaces2 << endl << endl << endl << endl;
-        cout << spaces << text << spaces << endl << endl << endl << endl;
-        cout << spaces2<< endl << endl;
-
-        this_thread::sleep_for(chrono::seconds(4));
-
-        cout << spaces3 << continuarText << spaces3 << endl << endl;
-        cin.get();
+        while (true) {
         system("cls");
 
+        if (_kbhit()) {
+            // Si se presiona una tecla
+            if (_getch() == 13) { // 13 es el código ASCII de Enter
+                break; // Sale del bucle si se presiona Enter
+            }
+        }
+        if (tiempoTranscurrido % 2 == 0) {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+            cout << spaces2 << endl;
+            cout << spaces2 << endl << endl << endl << endl;
+            cout << spaces << text << spaces << endl << endl;
+            cout << spaces3 << continuarText << spaces << endl << endl;
+            cout << spaces2 << endl;
+            cout << spaces2<< endl << endl;
+
+        } else {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << spaces2 << endl;
+            cout << spaces2 << endl << endl << endl << endl;
+            cout << spaces << text << spaces << endl << endl;
+            cout << spaces3 << continuarText << spaces << endl << endl;
+            cout << spaces2 << endl;
+            cout << spaces2<< endl << endl;
+
+        }
+
+        this_thread::sleep_for(chrono::seconds(1));
+
+        tiempoTranscurrido++;
+    }
+
     } else {
-        // La pantalla es más estrecha que el texto, imprime el texto tal como es.
+    // La pantalla es más estrecha que el texto, imprime el texto tal como es.
 
         cout << "Error en el centrado del texto" << endl;
     }
@@ -93,14 +121,14 @@ void dibujarMenuPricipal(){
     cout << endl << endl << barrasText << endl;
 }
 
-int devolverOpcion(int opcion){
+int devolverOpcionVerificada(int opcion){
+
     string space(5, ' ');
     int screenWidth = getTerminalWidth();
     string barra(screenWidth, '-');
     cout << endl << space << "Su opcion: "; cin >> opcion;
     cout << endl;
     cout << barra;
-
 
     return opcion;
 }

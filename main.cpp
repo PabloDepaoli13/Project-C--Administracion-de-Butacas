@@ -1,12 +1,6 @@
 #include "modelos.h"
 #include "funciones.h"
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <iomanip>
-#include <thread>
-#include <chrono>
-#include <cstdlib>
+
 
 
 
@@ -14,12 +8,12 @@ using namespace std;
 
 int main()
 {
-    string mensajeBienvenida = "Bienvenido a Cine Max";
+    string mensajeBienvenida = "******** Bienvenido a Cine Max ********";
 
     centerText(mensajeBienvenida);
 
 
-
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     Cine cineNew("Cine Max");
 
 
@@ -40,8 +34,10 @@ int main()
         string space(5, ' ');
         dibujarMenuPricipal();
 
+
+
         int opcion, valorNuevo;
-        valorNuevo = devolverOpcion(opcion);
+        valorNuevo = devolverOpcionVerificada(opcion);
 
         if(valorNuevo == 6){
             return false;
@@ -83,8 +79,13 @@ int main()
                 presioneParaContinuar();
                 break;
             default:
-                cout << "Opcion no valida." << endl;
-                presioneParaContinuar();
+                cout <<  endl << endl << space <<"Opcion no valida." << endl;
+                cout <<  endl << space <<"Presione Enter para volver a escribir una opcion." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.get();
+
+
                 break;
         }
     borrarPantalla();
