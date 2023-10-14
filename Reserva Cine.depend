@@ -33,20 +33,21 @@
 	<cstdlib>
 	<windows.h>
 
-1697083942 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
+1697221632 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
 	"modelos.h"
+	"Colores.h"
 
-1697083955 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
+1697221654 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
 	<iostream>
 	<vector>
 	<fstream>
 	<string>
+	<windows.h>
 
-1697084260 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
-	"modelos.h"
+1697222148 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
 	"funciones.h"
 
-1697083341 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
+1697218654 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
 	"modelos.h"
 	<iostream>
 	<vector>
@@ -58,4 +59,35 @@
 	<windows.h>
 	<conio.h>
 	<cctype>
+
+1697221632 source:d:\estudios\2do año desarrollo de software\programacion 1\proyecto\project-c--administracion-de-butacas-main\implementacion.cpp
+	"modelos.h"
+	"Colores.h"
+
+1697221654 d:\estudios\2do año desarrollo de software\programacion 1\proyecto\project-c--administracion-de-butacas-main\modelos.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<windows.h>
+
+1697214618 source:d:\estudios\2do año desarrollo de software\programacion 1\proyecto\project-c--administracion-de-butacas-main\main.cpp
+	"funciones.h"
+
+1697214773 d:\estudios\2do año desarrollo de software\programacion 1\proyecto\project-c--administracion-de-butacas-main\funciones.h
+	"modelos.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<iomanip>
+	<thread>
+	<chrono>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	<cctype>
+
+1697177185 d:\estudios\2do año desarrollo de software\programacion 1\proyecto\project-c--administracion-de-butacas-main\colores.h
+
+1697177185 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\colores.h
 

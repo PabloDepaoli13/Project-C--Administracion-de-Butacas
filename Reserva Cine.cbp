@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Colores.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="funciones.h">
 			<Option target="Debug" />
 		</Unit>

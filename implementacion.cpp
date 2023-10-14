@@ -1,4 +1,5 @@
 #include "modelos.h"
+#include "Colores.h"
 
 
 
@@ -37,7 +38,9 @@ using namespace std;
                     cout << endl << espacio <<"Ingrese su nombre: "; cin >> butaca.nombre;
                     cout << espacio <<"Ingrese su apellido: "; cin >> butaca.apellido; cout << endl;
                     butaca.reservada = true;
-                    cout << endl <<espacio <<"\033[1;32mButaca reservada con exito.\033[0m" << endl;
+                    pintarColor("verde");
+                    cout << endl <<espacio <<"Butaca reservada con exito." << endl;
+                    pintarColor("original");
                     return true;
                 } else {
                     cout << espacio <<"La butaca ya esta reservada." << endl;
@@ -56,10 +59,14 @@ using namespace std;
                     butaca.nombre = "";
                     butaca.apellido = "";
                     butaca.reservada = false;
+                    pintarColor("verde");
                     cout << espacio <<"Butaca liberada con exito." << endl;
+                    pintarColor("original");
                     return true;
                 } else {
-                    cout << espacio <<"La butaca no esta reservada." << endl;
+                    pintarColor("rojo");
+                    cout << endl << espacio <<"La butaca no esta reservada." << endl;
+                    pintarColor("original");
                     return false;
                 }
             }
@@ -81,11 +88,15 @@ using namespace std;
                 cout << espacio <<"Nombre nuevo: "; cin >> butaca.nombre;
                 cout << espacio <<"Apellido nuevo: "; cin >> butaca.apellido;
                 cout << espacio <<"---------------------" << endl;
+                pintarColor("verde");
                 cout << espacio <<"Datos actualizados con exito." << endl;
+                pintarColor("original");
                 return true;
             }
         }
+        pintarColor("rojo");
         cout << espacio << "Butaca no encontrada." << endl;
+        pintarColor("original");
         return false;
     }
 
@@ -104,23 +115,34 @@ using namespace std;
 
     void Cine::mostrarButacasDisponibles(){
     string barraC(11, '-');
-    cout << endl << endl << espacio <<"Butacas disponibles: " << "\033[1;32m Color Verde \033[0m" << endl;
-    cout << espacio <<"Butacas reservadas: " << "\033[1;31m Color Rojo \033[0m"<< endl << endl;
+    pintarColor("verde");
+    cout << endl << endl << espacio <<"Butacas disponibles: " << " Color Verde " << endl;
+    pintarColor("rojo");
+    cout << espacio <<"Butacas reservadas: " << " Color Rojo "<< endl << endl;
+    pintarColor("original");
 
-    cout << espacio << barraC << "\033[1;33m[----PANTALLA----]\033[0m" << barraC << endl << endl << endl;
+    cout << espacio << barraC;
+    pintarColor("amarillo");
+    cout << "[----PANTALLA----]";
+    pintarColor("original");
+    cout << barraC << endl << endl << endl;
     cout << espacio;
     for (const Butaca& butaca : butacas) {
         if (!butaca.reservada) {
             if(butaca.numero == 14 || butaca.numero == 18){
                 cout << endl << espacio ;
             }
-            cout << "\033[1;32m [- \033[0m" << butaca.numero <<"\033[1;32m -] \033[0m";
+            pintarColor("verde");
+            cout << " [- " << butaca.numero <<" -] ";
+            pintarColor("original");
             }
         else {
             if(butaca.numero == 14 || butaca.numero == 18){
                 cout << endl << espacio;
             }
-            cout << "\033[1;31m [- \033[0m" << butaca.numero <<"\033[1;31m -] \033[0m";
+            pintarColor("rojo");
+            cout << " [- " << butaca.numero <<" -] ";
+            pintarColor("original");
             }
         }
 
@@ -146,10 +168,33 @@ using namespace std;
             if(cantButacas == 5 || cantButacas == 9){
                 cout << endl << espacio;
             }
-            cout << "\033[1;32m [- \033[0m" << butaca.numero <<"\033[1;32m -] \033[0m";
+            pintarColor("rojo");
+            cout << " [- " << butaca.numero <<" -] ";
+            pintarColor("original");
             cantButacas++;
             }
 
         }
         return cantButacas;
+    }
+
+    void Cine::comprarSnacks(int num)
+    {
+        switch(num)
+        {
+        case 1:
+
+            break;
+
+        case 2:
+            break;
+
+        case 3:
+            break;
+
+        default:
+            break;
+
+        }
+
     }

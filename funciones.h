@@ -54,8 +54,8 @@ void centerText(const string& text) {
         if (tiempoTranscurrido % 2 == 0) {
             SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
             cout << spaces2 << endl;
-            cout << spaces2 << endl << endl << endl << endl;
-            cout << spaces << text << spaces << endl << endl;
+            cout << spaces2 << endl << endl << endl;
+            cout << spaces << text << spaces << endl << endl<< endl;
             cout << spaces3 << continuarText << spaces << endl << endl;
             cout << spaces2 << endl;
             cout << spaces2<< endl << endl;
@@ -63,8 +63,8 @@ void centerText(const string& text) {
         } else {
             SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
             cout << spaces2 << endl;
-            cout << spaces2 << endl << endl << endl << endl;
-            cout << spaces << text << spaces << endl << endl;
+            cout << spaces2 << endl << endl << endl ;
+            cout << spaces << text << spaces << endl << endl<< endl;
             cout << spaces3 << continuarText << spaces << endl << endl;
             cout << spaces2 << endl;
             cout << spaces2<< endl << endl;
@@ -89,8 +89,9 @@ void borrarPantalla(){
 }
 
 void presioneParaContinuar(){
+        string space(5, ' ');
         cin.get();
-        cout << endl << endl << "Precione enter para continuar..." << endl;
+        cout << endl << endl << space << "Precione enter para continuar..." << endl;
         cin.get();
 }
 
@@ -115,7 +116,8 @@ void dibujarMenuPricipal(){
         cout << space <<"3. Liberar butaca" << endl;
         cout << space <<"4. Actualizar butaca" << endl;
         cout << space <<"5. Mostrar butacas disponibles" << endl;
-        cout << space <<"6. Salir" << endl;
+        cout << space <<"6. Compra de Snacks" << endl;
+        cout << space <<"7. Salir" << endl;
 
 
     cout << endl << endl << barrasText << endl;
@@ -133,5 +135,80 @@ int devolverOpcionVerificada(int opcion){
     return opcion;
 }
 
+void salidaPrograma() {
+    string text = "Cerrando programa";
 
+    int screenWidth = getTerminalWidth();
+    int textWidth = text.length();
+
+
+    if (screenWidth >= textWidth) {
+        int padding = (screenWidth - textWidth) / 2;
+
+
+        string spaces(padding, ' ');
+        string spaces2(screenWidth, '-');
+
+
+
+        while (true) {
+        system("cls");
+
+        if (_kbhit()) {
+            // Si se presiona una tecla
+            if (_getch() == 13) { // 13 es el código ASCII de Enter
+                break; // Sale del bucle si se presiona Enter
+            }
+        }
+        if (tiempoTranscurrido % 2 == 0) {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+            cout << spaces2 << endl;
+            cout << spaces2 << endl << endl;
+            cout << spaces << text << spaces << endl << endl<< endl<< endl;
+            cout << spaces2 << endl;
+            cout << spaces2<< endl << endl;
+
+        } else {
+            SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << spaces2 << endl;
+            cout << spaces2 << endl << endl;
+            cout << spaces << text << spaces << endl << endl<< endl<< endl;
+            cout << spaces2 << endl;
+            cout << spaces2<< endl << endl;
+
+        }
+
+        this_thread::sleep_for(chrono::milliseconds(400));
+
+        tiempoTranscurrido++;
+        if(tiempoTranscurrido > 12){
+            exit(0);
+            }
+        }
+    }
+}
+
+void dibujarMenuSnack(){
+    int screenWidth = getTerminalWidth();
+    string pregunta = "Bienvenido a la tienda";
+    int padding = (screenWidth - pregunta.length()) / 2;
+
+    string space(padding, ' ');
+
+    string barrasText(screenWidth, '-');
+
+
+
+    cout << barrasText << endl << endl;
+
+
+    cout  << space << "Bienvenido a la tienda" << endl;
+        cout << space <<"Que funcion desea realizar?" << endl;
+        cout << space <<"1. Consultar snacks" << endl;
+        cout << space <<"2. Comprar snacks" << endl;
+        cout << space <<"3. volver a Cine Max" << endl;
+
+
+    cout << endl << endl << barrasText << endl;
+}
 #endif // FUNCIONES_H_INCLUDED

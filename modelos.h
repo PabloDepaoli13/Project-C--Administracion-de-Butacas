@@ -4,9 +4,22 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <windows.h>
 
 
 using namespace std;
+
+class Snack{
+
+public:
+    int numProducto;
+    double precio;
+    string nombre;
+
+
+    Snack(int num,string n, double p) : numProducto(num), nombre(n), precio(p) {}
+
+};
 
 class Butaca {
 public:
@@ -21,6 +34,7 @@ public:
 
 class Cine {
 public:
+    vector<Snack> snack;
     vector<Butaca> butacas;
     string nombre;
 
@@ -38,7 +52,11 @@ public:
 
     int mostrarButacasOcupadas();
 
+    void comprarSnacks(int num);
+
 };
+
+
 
 
 #endif // MODELOS_H_INCLUDED
