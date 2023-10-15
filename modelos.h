@@ -5,9 +5,23 @@
 #include <fstream>
 #include <string>
 #include <windows.h>
-
+#include <cctype>
 
 using namespace std;
+
+class Persona{
+
+public:
+
+    int numButaca;
+    int cantProducto;
+    double precioProducto, precioButaca;
+    string nombreSnack, nombre, apellido;
+    bool cuentaPaga;
+
+    Persona(int n, string nom, string ape ,string nS, double pB, double pP, int cP, bool cuentP): numButaca(n), nombre(nom) , apellido(ape) , nombreSnack(nS), precioButaca(pB), precioProducto(pP), cantProducto(cP), cuentaPaga(cuentP){}
+};
+
 
 class Snack{
 
@@ -23,6 +37,7 @@ public:
 
 class Butaca {
 public:
+
     int numero;
     bool reservada;
     double precio;
@@ -34,8 +49,9 @@ public:
 
 class Cine {
 public:
-    vector<Snack> snack;
+    vector<Snack> snacks;
     vector<Butaca> butacas;
+    vector<Persona> personas;
     string nombre;
 
     Cine(string n) : nombre(n){}
@@ -52,7 +68,9 @@ public:
 
     int mostrarButacasOcupadas();
 
-    void comprarSnacks(int num);
+    bool comprarSnacks(int num);
+
+    bool pagarCuentas(int numButa);
 
 };
 

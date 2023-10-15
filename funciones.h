@@ -27,8 +27,10 @@ int getTerminalWidth() {
 }
 
 
+
+
 void centerText(const string& text) {
-    string continuarText = "Precione enter para continuar";
+    string continuarText = "Presione enter para continuar";
     int screenWidth = getTerminalWidth();
     int textWidth = text.length();
     int nextWidth = continuarText.length();
@@ -91,7 +93,7 @@ void borrarPantalla(){
 void presioneParaContinuar(){
         string space(5, ' ');
         cin.get();
-        cout << endl << endl << space << "Precione enter para continuar..." << endl;
+        cout << endl << endl << space << "Presione enter para continuar..." << endl;
         cin.get();
 }
 
@@ -109,15 +111,17 @@ void dibujarMenuPricipal(){
 
     cout << barrasText << endl << endl;
 
-
-    cout  << space << "Que funcion desea realizar:" << endl;
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+        cout  << space << "MENU CINE MAX" << endl;
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED);
         cout << space <<"1. Consultar informacion de una butaca" << endl;
         cout << space <<"2. Reservar butaca" << endl;
         cout << space <<"3. Liberar butaca" << endl;
         cout << space <<"4. Actualizar butaca" << endl;
         cout << space <<"5. Mostrar butacas disponibles" << endl;
-        cout << space <<"6. Compra de Snacks" << endl;
-        cout << space <<"7. Salir" << endl;
+        cout << space <<"6. Ir a la tienda de productos" << endl;
+        cout << space <<"7. Confirmar Reserva y Pagar" << endl;
+        cout << space <<"8. Salir" << endl;
 
 
     cout << endl << endl << barrasText << endl;
@@ -181,7 +185,7 @@ void salidaPrograma() {
         this_thread::sleep_for(chrono::milliseconds(400));
 
         tiempoTranscurrido++;
-        if(tiempoTranscurrido > 12){
+        if(tiempoTranscurrido > 8){
             exit(0);
             }
         }
@@ -201,14 +205,16 @@ void dibujarMenuSnack(){
 
     cout << barrasText << endl << endl;
 
-
-    cout  << space << "Bienvenido a la tienda" << endl;
-        cout << space <<"Que funcion desea realizar?" << endl;
-        cout << space <<"1. Consultar snacks" << endl;
-        cout << space <<"2. Comprar snacks" << endl;
-        cout << space <<"3. volver a Cine Max" << endl;
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    cout  << space << "MENU DE LA TIENDA" << endl;
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED);
+    cout << space <<"1. Consultar informacion de productos" << endl;
+    cout << space <<"2. Comprar productos" << endl;
+    cout << space <<"3. volver al menu Cine Max" << endl;
 
 
     cout << endl << endl << barrasText << endl;
 }
+
+
 #endif // FUNCIONES_H_INCLUDED

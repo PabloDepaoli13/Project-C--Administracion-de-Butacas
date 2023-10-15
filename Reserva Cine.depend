@@ -33,21 +33,23 @@
 	<cstdlib>
 	<windows.h>
 
-1697221632 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
+1697348822 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
 	"modelos.h"
 	"Colores.h"
+	<limits>
 
-1697221654 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
+1697345671 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\modelos.h
 	<iostream>
 	<vector>
 	<fstream>
 	<string>
 	<windows.h>
+	<cctype>
 
-1697222148 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
+1697348788 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
 	"funciones.h"
 
-1697218654 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
+1697336059 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
 	"modelos.h"
 	<iostream>
 	<vector>
