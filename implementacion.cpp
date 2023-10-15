@@ -349,11 +349,17 @@ using namespace std;
                                         persona.precioProducto = snack.precio;
                                         persona.nombreSnack = snack.nombre;
                                         persona.cantProducto = cantidad;
+
                                         }
                                     }
 
                                 }
                             }
+                            pintarColor("amarillo");
+                            cout << endl << espacio <<"Se ha agregado correctamente el producto a tu pago final." << endl;
+                            pintarColor("original");
+                            cout << endl << endl << espacio << "Presione enter para volver a intentar..." << endl;
+                            cin.get();
                     }
                 }
 
@@ -372,11 +378,7 @@ using namespace std;
                 }
                 bucle = false;
 
-                pintarColor("amarillo");
-                cout << endl << espacio <<"Se ha agregado correctamente el producto a tu pago final." << endl;
-                pintarColor("original");
-                cout << endl << endl << espacio << "Presione enter para volver a intentar..." << endl;
-                cin.get();
+
             }
                 return true;
             }else if(num == 3){
@@ -426,17 +428,17 @@ using namespace std;
                     cin.get();
                     cin.get();
 
-            }else if(cantPersonas == 0){
+            }
+
+        }
+        if(cantPersonas == 0){
                 pintarColor("rojo");
                 cout << espacio <<"Opcion no valida, no se encontro la butaca reservada." << endl;
                 pintarColor("original");
                 cin.clear();
-                cin.get();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << endl << endl << espacio << "Presione enter para volver al Menu principal..." << endl;
                 cin.get();
-
-
-            }
         }
         return false;
     }
