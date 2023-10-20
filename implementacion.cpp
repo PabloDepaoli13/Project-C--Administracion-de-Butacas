@@ -52,18 +52,32 @@ using namespace std;
             if (butaca.numero == numero) {
                 if (!butaca.reservada) {
                     do {
-                    cout << endl << espacio <<"Nombre" << ": ";
+                    cout << endl << espacio <<"Ingrese su nombre" << ": ";
                     cin >> butaca.nombre;
                     if (!esCadenaSoloLetras(butaca.nombre)) {
                         pintarColor("rojo");
-                        cout <<  endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
                     }else if(butaca.nombre.length() < 3){
                         pintarColor("rojo");
-                        cout <<  endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
-                        }
-                    }while(!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+                    }
+                    } while (!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+                    do {
+                    cout << endl << espacio << "Ingrese su apellido" << ": ";
+                    cin >> butaca.apellido;cout << endl;
+
+                    if (!esCadenaSoloLetras(butaca.apellido)) {
+                        pintarColor("rojo");
+                        cout << endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }else if(butaca.apellido.length() < 3){
+                        pintarColor("rojo");
+                        cout << endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }
+                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
 
                     do {
                     cout << endl << espacio << "Apellido" << ": ";
@@ -132,14 +146,28 @@ using namespace std;
                     cin >> butaca.nombre;
                     if (!esCadenaSoloLetras(butaca.nombre)) {
                         pintarColor("rojo");
-                        cout <<  endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
                     }else if(butaca.nombre.length() < 3){
                         pintarColor("rojo");
-                        cout <<  endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
-                        }
-                    }while(!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+                    }
+                    } while (!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+                    do {
+                    cout << endl << espacio << "Apellido nuevo" << ": ";
+                    cin >> butaca.apellido;cout << endl;
+
+                    if (!esCadenaSoloLetras(butaca.apellido)) {
+                        pintarColor("rojo");
+                        cout << endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }else if(butaca.apellido.length() < 3){
+                        pintarColor("rojo");
+                        cout << endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }
+                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
 
                     do {
                     cout << endl << espacio << "Apellido nuevo" << ": ";
