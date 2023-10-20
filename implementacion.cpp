@@ -52,21 +52,33 @@ using namespace std;
             if (butaca.numero == numero) {
                 if (!butaca.reservada) {
                     do {
-                    cout << endl << espacio <<"Ingrese su nombre" << ": ";
+                    cout << endl << espacio <<"Nombre" << ": ";
                     cin >> butaca.nombre;
-                    cout << endl << espacio << "Ingrese su apellido" << ": ";
+                    if (!esCadenaSoloLetras(butaca.nombre)) {
+                        pintarColor("rojo");
+                        cout <<  endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }else if(butaca.nombre.length() < 3){
+                        pintarColor("rojo");
+                        cout <<  endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                        }
+                    }while(!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+
+                    do {
+                    cout << endl << espacio << "Apellido" << ": ";
                     cin >> butaca.apellido;cout << endl;
 
-                    if (!esCadenaSoloLetras(butaca.nombre) || !esCadenaSoloLetras(butaca.apellido)) {
+                    if (!esCadenaSoloLetras(butaca.apellido)) {
                         pintarColor("rojo");
-                        cout << espacio << "Los nombres y apellidos solo pueden contener letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El apellido solo puede contener letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
-                    }else if(butaca.nombre.length() < 3 || butaca.apellido.length() < 3){
+                    }else if(butaca.apellido.length() < 3){
                         pintarColor("rojo");
-                        cout << espacio << "Los nombres y apellidos deben contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        cout <<  endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
                     }
-                    } while (!esCadenaSoloLetras(butaca.nombre) || !esCadenaSoloLetras(butaca.apellido) || butaca.nombre.length() < 3 || butaca.apellido.length() < 3);
+                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
                     butaca.reservada = true;
                     pintarColor("verde");
                     cout << endl << espacio <<"Butaca " << numero << " reservada con exito." << endl;
@@ -115,34 +127,49 @@ using namespace std;
                 cout << espacio <<"---------------------" << endl;
                 cout << espacio <<"Datos Nuevos" << endl;
                 cout << espacio <<"---------------------" << endl;
-                do {
+                    do {
                     cout << endl << espacio <<"Nombre nuevo" << ": ";
                     cin >> butaca.nombre;
+                    if (!esCadenaSoloLetras(butaca.nombre)) {
+                        pintarColor("rojo");
+                        cout <<  endl << espacio << "El nombre solo puede contener letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                    }else if(butaca.nombre.length() < 3){
+                        pintarColor("rojo");
+                        cout <<  endl << espacio << "El nombre debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        pintarColor("original");
+                        }
+                    }while(!esCadenaSoloLetras(butaca.nombre) || butaca.nombre.length() < 3);
+
+                    do {
                     cout << endl << espacio << "Apellido nuevo" << ": ";
                     cin >> butaca.apellido;cout << endl;
 
-                    if (!esCadenaSoloLetras(butaca.nombre) || !esCadenaSoloLetras(butaca.apellido)) {
+                    if (!esCadenaSoloLetras(butaca.apellido)) {
                         pintarColor("rojo");
-                        cout << espacio << "Los nombres y apellidos solo pueden contener letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El apellido solo puede contener letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
-                    }else if(butaca.nombre.length() < 3 || butaca.apellido.length() < 3){
+                    }else if(butaca.apellido.length() < 3){
                         pintarColor("rojo");
-                        cout << espacio << "Los nombres y apellidos deben contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
+                        cout << endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
                         pintarColor("original");
                     }
-                } while (!esCadenaSoloLetras(butaca.nombre) || !esCadenaSoloLetras(butaca.apellido) || butaca.nombre.length() < 3 || butaca.apellido.length() < 3);
-                cout << espacio <<"---------------------" << endl;
-                pintarColor("verde");
-                cout << espacio <<"Datos actualizados con exito." << endl;
+                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
+                    cout << espacio <<"---------------------" << endl;
+                    pintarColor("verde");
+                    cout << espacio <<"Datos actualizados con exito." << endl;
+                    pintarColor("original");
+                    return true;
+                    }
+
+
+
+                }
+                pintarColor("rojo");
+                cout << espacio << "Butaca no encontrada." << endl;
                 pintarColor("original");
-                return true;
-            }
-        }
-        pintarColor("rojo");
-        cout << espacio << "Butaca no encontrada." << endl;
-        pintarColor("original");
-        return false;
-    }
+                return false;
+       }
 
     /*void Cine::mostrarButacasDisponibles(){
             cout << espacio <<"Butacas disponibles:" << endl;

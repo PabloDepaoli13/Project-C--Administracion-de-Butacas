@@ -93,3 +93,27 @@
 
 1697177185 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\colores.h
 
+1697374013 source:c:\users\pablo pc\desktop\project-c--administracion-de-butacas-main\main.cpp
+	"funciones.h"
+
+1697374013 c:\users\pablo pc\desktop\project-c--administracion-de-butacas-main\funciones.h
+	"modelos.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<iomanip>
+	<thread>
+	<chrono>
+	<cstdlib>
+	<windows.h>
+	<conio.h>
+	<cctype>
+
+1697374013 c:\users\pablo pc\desktop\project-c--administracion-de-butacas-main\modelos.h
+	<iostream>
+	<vector>
+	<fstream>
+	<string>
+	<windows.h>
+	<cctype>
+
