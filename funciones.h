@@ -112,7 +112,7 @@ void dibujarMenuPricipal(){
     cout << barrasText << endl << endl;
 
         SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-        cout  << space << "MENU CINE MAX" << endl;
+        cout  << space << "MENU CINE MAX" << endl << endl;
         SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED);
         cout << space <<"1. Consultar informacion de una butaca" << endl;
         cout << space <<"2. Reservar butaca" << endl;
@@ -120,7 +120,7 @@ void dibujarMenuPricipal(){
         cout << space <<"4. Actualizar butaca" << endl;
         cout << space <<"5. Mostrar butacas disponibles" << endl;
         cout << space <<"6. Ir a la tienda de productos" << endl;
-        cout << space <<"7. Confirmar Reserva y Pagar" << endl;
+        cout << space <<"7. Ver pago total" << endl;
         cout << space <<"8. Salir" << endl;
 
 
@@ -206,7 +206,7 @@ void dibujarMenuSnack(){
     cout << barrasText << endl << endl;
 
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
-    cout  << space << "MENU DE LA TIENDA" << endl;
+    cout  << space << "MENU DE LA TIENDA" << endl << endl;
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED);
     cout << space <<"1. Consultar informacion de productos" << endl;
     cout << space <<"2. Comprar productos" << endl;

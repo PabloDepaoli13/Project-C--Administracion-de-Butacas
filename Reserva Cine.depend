@@ -33,7 +33,7 @@
 	<cstdlib>
 	<windows.h>
 
-1697823914 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
+1698184592 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\implementacion.cpp
 	"modelos.h"
 	"Colores.h"
 	<limits>
@@ -49,7 +49,7 @@
 1697823914 source:c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\main.cpp
 	"funciones.h"
 
-1697823914 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
+1698185171 c:\users\pablo pc\desktop\estudios\2do año desarrollo de software\programacion i\proyecto final\project-c---administracion-de-butacas\funciones.h
 	"modelos.h"
 	<iostream>
 	<vector>

@@ -78,33 +78,20 @@ using namespace std;
                         pintarColor("original");
                     }
                     } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
-
-                    do {
-                    cout << endl << espacio << "Apellido" << ": ";
-                    cin >> butaca.apellido;cout << endl;
-
-                    if (!esCadenaSoloLetras(butaca.apellido)) {
-                        pintarColor("rojo");
-                        cout << endl << espacio << "El apellido solo puede contener letras. Por favor, intentelo de nuevo." << endl;
-                        pintarColor("original");
-                    }else if(butaca.apellido.length() < 3){
-                        pintarColor("rojo");
-                        cout <<  endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
-                        pintarColor("original");
-                    }
-                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
                     butaca.reservada = true;
                     pintarColor("verde");
                     cout << endl << espacio <<"Butaca " << numero << " reservada con exito." << endl;
                     pintarColor("original");
                     return true;
                 } else {
-                    cout << espacio <<"La butaca ya esta reservada." << endl;
+                    cout << endl << espacio <<"La butaca ya esta reservada." << endl;
                     return false;
                 }
             }
         }
-        cout << espacio <<"Butaca no encontrada." << endl;
+        pintarColor("rojo");
+        cout << endl << espacio <<"Butaca no encontrada." << endl;
+        pintarColor("original");
         return false;
     }
 
@@ -116,7 +103,7 @@ using namespace std;
                     butaca.apellido = "";
                     butaca.reservada = false;
                     pintarColor("verde");
-                    cout << espacio <<"Butaca liberada con exito." << endl;
+                    cout << endl << espacio <<"Butaca liberada con exito." << endl;
                     pintarColor("original");
                     return true;
                 } else {
@@ -127,7 +114,9 @@ using namespace std;
                 }
             }
         }
-        cout << espacio <<"Butaca no encontrada." << endl;
+        pintarColor("rojo");
+        cout << endl << espacio <<"Butaca no encontrada." << endl;
+        pintarColor("original");
         return false;
     }
 
@@ -168,24 +157,9 @@ using namespace std;
                         pintarColor("original");
                     }
                     } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
-
-                    do {
-                    cout << endl << espacio << "Apellido nuevo" << ": ";
-                    cin >> butaca.apellido;cout << endl;
-
-                    if (!esCadenaSoloLetras(butaca.apellido)) {
-                        pintarColor("rojo");
-                        cout << endl << espacio << "El apellido solo puede contener letras. Por favor, intentelo de nuevo." << endl;
-                        pintarColor("original");
-                    }else if(butaca.apellido.length() < 3){
-                        pintarColor("rojo");
-                        cout << endl << espacio << "El apellido debe contener como minimo de 3 letras. Por favor, intentelo de nuevo." << endl;
-                        pintarColor("original");
-                    }
-                    } while (!esCadenaSoloLetras(butaca.apellido) || butaca.apellido.length() < 3);
-                    cout << espacio <<"---------------------" << endl;
+                    cout << endl << espacio <<"---------------------" << endl;
                     pintarColor("verde");
-                    cout << espacio <<"Datos actualizados con exito." << endl;
+                    cout << endl << espacio <<"Datos actualizados con exito." << endl;
                     pintarColor("original");
                     return true;
                     }
@@ -194,7 +168,7 @@ using namespace std;
 
                 }
                 pintarColor("rojo");
-                cout << espacio << "Butaca no encontrada." << endl;
+                cout << endl << espacio <<"Butaca no encontrada." << endl;
                 pintarColor("original");
                 return false;
        }
@@ -281,7 +255,7 @@ using namespace std;
     {
         int encontrado = 0;
         int numProducto, cantidad = 0;
-        bool bucle = true;
+        bool bucle = true, productTrue = false;
         int tamanoPantalla = getTerminalWidth2();
         string barrasText(tamanoPantalla, '-');
 
@@ -340,7 +314,7 @@ using namespace std;
                                 cout << endl <<  espacio << "Ingrese la cantidad: "; cin >> cantidad;
                             }
                             pintarColor("verde");
-                            cout << espacio << "Producto agregado con exito";
+                            cout << endl << espacio << "Producto agregado con exito";
                             pintarColor("original");
                             cin.get();
                             cout << endl << endl << espacio << "Presione enter para continuar..." << endl;
@@ -354,7 +328,7 @@ using namespace std;
                                 cout << endl <<  espacio << "Ingrese la cantidad: "; cin >> cantidad;
                             }
                             pintarColor("verde");
-                            cout << espacio << "Producto agregado con exito";
+                            cout << endl << espacio << "Producto agregado con exito";
                             pintarColor("original");
                             cin.get();
                             cout << endl << endl << espacio << "Presione enter para continuar..." << endl;
@@ -367,7 +341,7 @@ using namespace std;
                                 cout << endl <<  espacio << "Ingrese la cantidad: "; cin >> cantidad;
                             }
                             pintarColor("verde");
-                            cout << espacio << "Producto agregado con exito";
+                            cout << endl << espacio << "Producto agregado con exito";
                             pintarColor("original");
                             cin.get();
                             cout << endl << endl << espacio << "Presione enter para continuar..." << endl;
@@ -381,7 +355,7 @@ using namespace std;
                             }
 
                             pintarColor("verde");
-                            cout << espacio << "Producto agregado con exito";
+                            cout << endl << espacio << "Producto agregado con exito";
                             pintarColor("original");
                             cin.get();
                             cout << endl << endl << espacio << "Presione enter para continuar..." << endl;
@@ -404,17 +378,16 @@ using namespace std;
                                         persona.precioProducto = snack.precio;
                                         persona.nombreSnack = snack.nombre;
                                         persona.cantProducto = cantidad;
-
+                                        productTrue = true;
                                         }
                                     }
-
                                 }
                             }
+                            if(productTrue){
                             pintarColor("amarillo");
-                            cout << endl << espacio <<"Se ha agregado correctamente el producto a tu pago final." << endl;
+                            cout << endl << espacio << "El producto se ha agregado correctamente a tu pago final.";
                             pintarColor("original");
-                            cout << endl << endl << espacio << "Presione enter para volver a intentar..." << endl;
-                            cin.get();
+                            }
                     }
                 }
 
@@ -488,7 +461,7 @@ using namespace std;
         }
         if(cantPersonas == 0){
                 pintarColor("rojo");
-                cout << espacio <<"Opcion no valida, no se encontro la butaca reservada." << endl;
+                cout << endl << espacio <<"Opcion no valida, no se encontro la butaca reservada." << endl;
                 pintarColor("original");
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
